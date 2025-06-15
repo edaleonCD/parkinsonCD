@@ -1,0 +1,58 @@
+# General model information
+language: en
+tags:
+  - speech-enhancement
+  - dereverberation
+  - diffusion-models
+  - generative-models
+  - pytorch
+  - audio-processing
+license: mit
+datasets:
+  - VoiceBank-DEMAND
+  - WSJ0-CHiME3
+  - WSJ0-REVERB
+  - EARS-WHAM
+  - EARS-Reverb
+model_name: speech-enhancement-dereverberation-diffusion
+model_type: diffusion-based-generative-model
+library_name: pytorch
+pipeline_tag: audio-to-audio
+
+# Important files for the model
+key_files:
+  - model.py
+  - train.py
+  - inference.py
+  - enhancement.py
+  - requirements.txt
+  - calc_metrics.py
+
+# Pretrained model checkpoints
+pretrained_checkpoints:
+  voicebank_demand:
+    description: SGMSE+ trained on VoiceBank-DEMAND
+    download_link: https://drive.google.com/drive/folders/1CSnkhUSoiv3RG0xg7WEcVapyLuwDaLbe?usp=sharing
+    gdown_id: 1_H3EXvhcYBhOZ9QNUcD5VZHc6ktrRbwQ
+  wsj0_chime3:
+    description: SGMSE+ trained on WSJ0-CHiME3
+    download_link: https://drive.google.com/drive/folders/1CSnkhUSoiv3RG0xg7WEcVapyLuwDaLbe?usp=sharing
+    gdown_id: 16K4DUdpmLhDNC7pJhBBc08pkSIn_yMPi
+  wsj0_reverb:
+    description: SGMSE+ trained on WSJ0-REVERB
+    download_link: https://drive.google.com/drive/folders/1082_PSEgrqoVVrNsAkSIcpLF1AAtzGwV?usp=sharing
+    gdown_id: 1eiOy0VjHh9V9ZUFTxu1Pq2w19izl9ejD
+  ears_wham:
+    description: SGMSE+ trained on EARS-WHAM
+    download_link: https://drive.google.com/drive/folders/1Tn6pVwjxUAy1DJ8167JCg3enuSi0hiw5?usp=sharing
+    gdown_id: 1t_DLLk8iPH6nj8M5wGeOP3jFPaz3i7K5
+  ears_reverb:
+    description: SGMSE+ trained on EARS-Reverb
+    download_link: https://drive.google.com/drive/folders/1PunXuLbuyGkknQCn_y-RCV2dTZBhyE3V?usp=sharing
+    gdown_id: 1PunXuLbuyGkknQCn_y-RCV2dTZBhyE3V
+
+# Citation references for the model
+citations:
+  - '@inproceedings{welker22speech, author={Simon Welker and Julius Richter and Timo Gerkmann}, title={Speech Enhancement with Score-Based Generative Models in the Complex {STFT} Domain}, year={2022}, booktitle={Proc. Interspeech 2022}, pages={2928--2932}, doi={10.21437/Interspeech.2022-10653}}'
+  - '@article{richter2023speech, title={Speech Enhancement and Dereverberation with Diffusion-based Generative Models}, author={Richter, Julius and Welker, Simon and Lemercier, Jean-Marie and Lay, Bunlong and Gerkmann, Timo}, journal={IEEE/ACM Transactions on Audio, Speech, and Language Processing}, volume={31}, pages={2351-2364}, year={2023}, doi={10.1109/TASLP.2023.3285241}}'
+  - '@inproceedings{richter2024ears, title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation}, author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo}, booktitle={ISCA Interspeech}, year={2024}}'
